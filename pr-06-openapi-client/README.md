@@ -6,4 +6,4 @@
 - `CampusMarket/openapi.yaml` — спецификация шлюза (`GET /catalog/items`, `POST /orders/checkout`).
 - `CampusMarket/CampusMarket.Client` — консольный клиент на C# (.NET 8): `Models`, `Services`, `UI`.
 - `CampusMarket/CampusMarket.Tests` — тесты клиента.
-- `CampusMarket/mock_gateway.py` — заглушка шлюза для демонстрации клиента.
+- Адрес шлюза клиент берёт из переменной окружения `CAMPUS_API_URL`.
