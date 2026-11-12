@@ -1,0 +1,3 @@
+*.pdf binary
+*.cs text diff=csharp
+*.md text
