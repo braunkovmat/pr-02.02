@@ -1,0 +1,36 @@
+*   046e306 (HEAD -> develop) Merge hotfix/payment-timeout into develop
+|\  
+* \   4078866 Merge release/v1.1 back into develop
+|\ \  
+| | | *   f710f24 (tag: v1.1.1, main) Merge hotfix/payment-timeout into main
+| | | |\  
+| | | |/  
+| | |/|   
+| | * | 7e574a1 fix(payment): increase gateway timeout
+| | |/  
+| | *   672c687 (tag: v1.1.0) Merge release/v1.1 into main
+| | |\  
+| | |/  
+| |/|   
+| * | fe7f2a1 chore(release): bump version to 1.1.0
+|/ /  
+* |   2fbd356 Merge feature/catalog-import into develop
+|\ \  
+| * | 106470a feat(catalog): add catalog import
+| |/  
+* |   fd3dde2 Merge feature/warehouse-sync into develop
+|\ \  
+| * | 080a90c feat(warehouse): add stock synchronization
+| |/  
+* |   e0ccc84 Merge feature/payment-gateway into develop
+|\ \  
+| |/  
+|/|   
+| * ef6e31a feat(payment): add PaymentService
+|/  
+* 1ef3469 (tag: v1.0.0) Initial commit
+* develop
+  main
+v1.0.0
+v1.1.0
+v1.1.1

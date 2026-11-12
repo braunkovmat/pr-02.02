@@ -5,9 +5,9 @@
 
 | Папка | Тема | Что внутри |
 |---|---|---|
-| `pr-05-git-flow` | Проектирование стратегии ветвления Git Flow | отчёт (PDF) |
-| `pr-06-openapi-client` | Клиентская архитектура и OpenAPI-спецификация шлюза | отчёт (PDF), проект `CampusMarket` (клиент на C#, тесты, `openapi.yaml`, заглушка шлюза) |
-| `pr-07-modules` | Разработка модульной структуры проекта | отчёт (PDF) с диаграммами UML и C4 |
-| `pr-08-artifacts-protocols` | Перечень артефактов и протоколов проекта | отчёт (PDF) |
-| `pr-09-repo-structure` | Настройка `.gitignore`, структуры репозитория и прав доступа | отчёт (PDF), репозиторий `AIS_LogisticsHub` (`src`, `tests`, `docs`) |
+| `pr-05-git-flow` | Проектирование стратегии ветвления Git Flow | отчёт (PDF), сценарий `git-flow-scenario.sh`, граф коммитов, учебный репозиторий `shop-gateway.bundle` |
+| `pr-06-openapi-client` | Клиентская архитектура и OpenAPI-спецификация шлюза | отчёт (PDF), проект `CampusMarket` (клиент на C#, тесты, `openapi.yaml`) |
+| `pr-07-modules` | Разработка модульной структуры проекта | отчёт (PDF) с диаграммами UML и C4, решение `CampusMarket` из четырёх проектов |
+| `pr-08-artifacts-protocols` | Перечень артефактов и протоколов проекта | отчёт (PDF), `openapi.yaml`, `docs/` (артефакты, протокол Git, чек-лист код-ревью, ADR-001) |
+| `pr-09-repo-structure` | Настройка `.gitignore`, структуры репозитория и прав доступа | отчёт (PDF), репозиторий `AIS_LogisticsHub` (`src`, `tests`, `docs`), `AIS_LogisticsHub.bundle` с первым коммитом |
 | `analytical-essay` | Аналитическое эссе по ISO/IEC 12207 | эссе (PDF) |

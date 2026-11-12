@@ -1,0 +1,28 @@
+<Window x:Class="CampusMarket.UI.Desktop.Views.CatalogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Маркетплейс кампуса — каталог" Height="420" Width="640">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+            <Button Content="Войти" Command="{Binding SignInCommand}" Margin="0,0,8,0" Padding="10,4"/>
+            <Button Content="Обновить каталог" Command="{Binding RefreshCommand}" Margin="0,0,8,0" Padding="10,4"/>
+            <Button Content="В корзину" Command="{Binding AddToCartCommand}" Margin="0,0,8,0" Padding="10,4"/>
+            <Button Content="Корзина" Click="OpenCart_Click" Padding="10,4"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}"
+                  AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" Binding="{Binding Id}" Width="60"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Цена, руб." Binding="{Binding Price}" Width="100"/>
+                <DataGridTextColumn Header="Остаток" Binding="{Binding Stock}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Row="2" Text="{Binding Status}" Margin="0,8,0,0"/>
+    </Grid>
+</Window>

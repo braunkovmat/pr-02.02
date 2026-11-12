@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: Logistics Hub Tracking API
+  description: API трекинга АИС «Логистический хаб»
+  version: 1.0.0
+paths:
+  /scans:
+    post:
+      summary: Принять событие сканирования QR-кода или RFID-метки
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScanRequest'
+      responses:
+        '202':
+          description: Событие принято
+        '400':
+          description: Пустой или некорректный код
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /parcels/{id}/track:
+    get:
+      summary: История перемещения посылки
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: События посылки
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ScanRequest'
+        '404':
+          description: Посылка не найдена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /routes:
+    post:
+      summary: Построить маршрут доставки
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RouteRequest'
+      responses:
+        '200':
+          description: Маршрут построен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+components:
+  schemas:
+    ScanRequest:
+      type: object
+      required: [code, type, warehouseId]
+      properties:
+        code:
+          type: string
+          description: Содержимое QR-кода или идентификатор RFID-метки
+        type:
+          type: string
+          enum: [qr, rfid]
+        warehouseId:
+          type: string
+        scannedAt:
+          type: string
+          format: date-time
+    RouteRequest:
+      type: object
+      required: [parcelId, toAddress]
+      properties:
+        parcelId:
+          type: string
+        toAddress:
+          type: string
+    Route:
+      type: object
+      properties:
+        parcelId:
+          type: string
+        points:
+          type: array
+          items:
+            type: string
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
